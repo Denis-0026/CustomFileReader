@@ -1,0 +1,301 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "core": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/core",
+      "sourceRoot": "projects/core/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "projects/core/src/main.ts",
+            "tsConfig": "projects/core/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/core/public"
+              }
+            ],
+            "styles": ["projects/core/src/styles.scss"]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "core:build:production"
+            },
+            "development": {
+              "buildTarget": "core:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "projects/core/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/core/public"
+              }
+            ],
+            "styles": ["projects/core/src/styles.scss"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.component.html"]
+          }
+        }
+      }
+    },
+    "custom-file-viewer": {
+      "projectType": "library",
+      "root": "libs/custom-file-viewer",
+      "sourceRoot": "libs/custom-file-viewer/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/custom-file-viewer/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/custom-file-viewer/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "libs/custom-file-viewer/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "block-resizable": {
+      "projectType": "library",
+      "root": "libs/block-resizable",
+      "sourceRoot": "libs/block-resizable/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/block-resizable/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/block-resizable/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "libs/block-resizable/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "block-zoomable": {
+      "projectType": "library",
+      "root": "libs/block-zoomable",
+      "sourceRoot": "libs/block-zoomable/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/block-zoomable/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/block-zoomable/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "libs/block-zoomable/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "mock-data": {
+      "projectType": "library",
+      "root": "libs/mock-data",
+      "sourceRoot": "libs/mock-data/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/mock-data/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/mock-data/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "libs/mock-data/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "scroll-page-tracker": {
+      "projectType": "library",
+      "root": "libs/scroll-page-tracker",
+      "sourceRoot": "libs/scroll-page-tracker/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/scroll-page-tracker/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/scroll-page-tracker/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "libs/scroll-page-tracker/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "block-annotations": {
+      "projectType": "library",
+      "root": "libs/block-annotations",
+      "sourceRoot": "libs/block-annotations/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/block-annotations/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/block-annotations/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "libs/block-annotations/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "block-draggable": {
+      "projectType": "library",
+      "root": "libs/block-draggable",
+      "sourceRoot": "libs/block-draggable/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/block-draggable/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/block-draggable/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "libs/block-draggable/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "custom-table": {
+      "projectType": "library",
+      "root": "libs/custom-table",
+      "sourceRoot": "libs/custom-table/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/custom-table/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/custom-table/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "libs/custom-table/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  }
+}

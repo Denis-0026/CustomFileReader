@@ -1,0 +1,16 @@
+.data-list {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  &_item {
+    width: calc(100% - 60px);
+    height: 50px;
+    margin: 20px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    ;
+  }
+}

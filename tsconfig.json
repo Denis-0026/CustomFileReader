@@ -1,0 +1,96 @@
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "paths": {
+      "@app/*": ["./projects/core/src/*"],
+      "@libs/*": ["./libs/*"],
+      "block-annotations": ["./dist/block-annotations"],
+      "block-draggable": ["./dist/block-draggable"],
+      "block-resizable": ["./dist/libs/block-resizable"],
+      "block-zoomable": ["./dist/libs/block-zoomable"],
+      "custom-file-viewer": ["./dist/libs/custom-file-viewer"],
+      "custom-table": ["./dist/libs/custom-table"],
+      "mock-data": ["./dist/libs/mock-data"],
+      "scroll-page-tracker": ["./dist/libs/scroll-page-tracker"]
+    },
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve",
+    // TODO Нужно для имитации запросов. При удалении Fake backend тоже убрать
+    "resolveJsonModule": true
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "typeCheckHostBindings": true,
+    "strictTemplates": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/core/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/core/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/custom-file-viewer/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/custom-file-viewer/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/block-resizable/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/block-resizable/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/block-zoomable/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/block-zoomable/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/mock-data/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/mock-data/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/scroll-page-tracker/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/scroll-page-tracker/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/block-annotations/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/block-annotations/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/block-draggable/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/block-draggable/tsconfig.spec.json"
+    },
+    {
+      "path": "./libs/custom-table/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/custom-table/tsconfig.spec.json"
+    }
+  ]
+}

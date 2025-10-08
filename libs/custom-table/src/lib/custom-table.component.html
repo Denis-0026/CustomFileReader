@@ -1,0 +1,9 @@
+<div class="data-list">
+    @for (item of dataList(); track item.id) {
+        <div [id]="item.id" class="data-list_item" (click)="rowClick(item.id)">
+            <p>{{ item.id }}</p>
+        </div>
+    } @empty {
+        <p>No items to display.</p>
+    }
+</div>

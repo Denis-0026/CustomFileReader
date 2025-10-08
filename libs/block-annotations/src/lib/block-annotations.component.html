@@ -1,0 +1,11 @@
+<div class="annotations">
+  <form [formGroup]="annotationsForm">
+    <div formArrayName="annotationControls" class="annotations_controls">
+      @for (annotation of pageAnnotations(); track $index;) {
+        <div class="annotation" annotation [pageAnnotation]="annotation">
+          <lib-img-annotation [formControlName]="$index"></lib-img-annotation>
+        </div>
+      }
+    </div>
+  </form>
+</div>

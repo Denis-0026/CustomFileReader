@@ -1,0 +1,30 @@
+$header-height: 100px;
+$footer-height: 50px;
+
+* {
+  width: 100%;
+}
+
+.root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &_header {
+    height: $header-height;
+    background-color: rgb(100, 100, 100);
+  }
+
+  &_container {
+    height: calc(100% - ($header-height + $footer-height));
+    width: 100%;
+    background-color: #dddddd;
+    overflow-y: hidden;
+  }
+
+  &_footer {
+    height: $footer-height;
+    background-color: rgb(100, 100, 100);
+  }
+}

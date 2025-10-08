@@ -1,0 +1,11 @@
+<div class="pages-viewer" scrollPageTracker [currentPageId]="currentPageId()">
+  <div id="custom-file-viewer" class="pages" zoomable [currentPageId]="currentPageId()">
+    @for (page of pagesData(); track page.id) {
+      <div [id]="page.id" class="pages_item">
+        <lib-custom-page-viewer [pageData]="page"></lib-custom-page-viewer>
+      </div>
+    } @empty {
+      <p>No items to display.</p>
+    }
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="img-controll">
+  @if (file) {
+    <img [src]="getImgURL()" alt="Uploaded image" />
+  } @else {
+    <input type="file" accept="image/*" (change)="handleFileInput($event)" />
+  }
+</div>

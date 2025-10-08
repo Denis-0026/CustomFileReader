@@ -1,0 +1,24 @@
+.pages-viewer {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  overscroll-behavior: contain;
+  overflow-y: auto;
+}
+
+.pages {
+  margin: auto;
+  // TODO
+  width: calc(100% - 15px);
+  height: 100%;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &_item {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+  }
+}

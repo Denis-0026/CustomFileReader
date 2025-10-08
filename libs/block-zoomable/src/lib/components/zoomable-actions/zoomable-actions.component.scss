@@ -1,0 +1,17 @@
+$zoom-height: 24px;
+$zoom-width: 150px;
+
+.wrapper {
+    height: 0px;
+    width: 0px;
+    position: fixed;
+    bottom: 32px;
+    left: calc(100% - $zoom-width);
+}
+
+.zoomable {
+    height: $zoom-height;
+    width: $zoom-width;
+    display: flex;
+    flex-direction: row;
+}

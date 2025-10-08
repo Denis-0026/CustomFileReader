@@ -1,0 +1,13 @@
+<div [id]="pageData()?.id" class="page">
+  <div class="page_img">
+    <!-- @if (pageData()?.imageData) {
+      <img [src]="pageData()?.imageData?.imageBlob" />
+    } -->
+    <img [src]="pageData()?.imageData?.imageUrl" />
+  </div>
+  @if (pageData()?.annotations) {
+    <div class="page_annotations">
+      <lib-block-annotations [pageAnnotations]="pageData()?.annotations"></lib-block-annotations>
+    </div>
+  }
+</div>

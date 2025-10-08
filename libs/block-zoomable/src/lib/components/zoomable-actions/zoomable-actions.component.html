@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <div class="zoomable">
+        <div class="zoomable_actions">
+            <button (click)="incZoom()">+</button>
+            <button (click)="decZoom()">-</button>
+        </div>
+        <div class="zoomable_factor">
+            {{ factor() | factorToPercent}}
+        </div>
+    </div>
+</div>

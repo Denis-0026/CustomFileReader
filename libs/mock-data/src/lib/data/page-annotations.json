@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "documentId": 1,
+    "pageId": 1,
+    "type": "image",
+    "position": { "x": 200, "y": 300, "z": 100 },
+    "size": { "height": 200, "width": 300 }
+  },
+  {
+    "id": 2,
+    "documentId": 1,
+    "pageId": 1,
+    "type": "text",
+    "position": { "x": 50, "y": 150, "z": 500 },
+    "size": { "height": 500, "width": 300 }
+  },
+  {
+    "id": 2,
+    "documentId": 1,
+    "pageId": 1,
+    "type": "image",
+    "position": { "x": 50, "y": 150, "z": 500 },
+    "size": { "height": 500, "width": 300 }
+  }
+]
